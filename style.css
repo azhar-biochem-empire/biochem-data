@@ -1,1 +1,181 @@
+/* =========================
+   BioChem Data Website
+   ========================= */
 
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,20,40,0.75),
+    rgba(0,20,40,0.75)
+    ),
+    url("biochem-bg.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+    color:white;
+
+}
+
+
+
+/* Header */
+
+header{
+
+    height:45vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+header h1{
+
+    font-size:60px;
+
+    letter-spacing:2px;
+
+}
+
+
+
+header h2{
+
+    margin-top:15px;
+
+    font-weight:normal;
+
+}
+
+
+
+/* Cards */
+
+
+.card{
+
+    width:330px;
+
+    margin:25px auto;
+
+    padding:35px;
+
+
+    background:
+
+    rgba(255,255,255,0.15);
+
+
+    border-radius:25px;
+
+
+    backdrop-filter:blur(10px);
+
+
+    border:1px solid rgba(255,255,255,.3);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px black;
+
+}
+
+
+
+/* Links */
+
+
+a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+
+a:hover{
+
+    color:#00ffff;
+
+}
+
+
+
+/* Description */
+
+
+.description{
+
+    text-align:center;
+
+    max-width:800px;
+
+    margin:40px auto;
+
+    font-size:20px;
+
+    line-height:1.7;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+
+header h1{
+
+font-size:40px;
+
+}
+
+
+.card{
+
+width:90%;
+
+}
+
+}
