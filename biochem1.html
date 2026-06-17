@@ -108,37 +108,67 @@
         .files-list {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
+        /* كرت المحاضرة المعدل ليحتوي على النص والأزرار بشكل متناسق */
         .file-item {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            gap: 10px;
             background: rgba(255, 255, 255, 0.03);
-            padding: 10px;
+            padding: 12px;
             border-radius: 6px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .file-name {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: #e0e0e0;
+            font-weight: 500;
         }
 
-        .download-link {
+        /* حاوية الأزرار الثنائية */
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+
+        .action-btn {
             text-decoration: none;
-            background-color: #00e5ff;
-            color: #0b1a24;
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 4px;
             font-weight: bold;
             font-size: 0.8rem;
-            transition: background 0.2s;
+            transition: all 0.2s;
+            text-align: center;
+            flex: 1; /* لتوزيع الأزرار بالتساوي على الشاشات الصغيرة */
+            max-width: 100px;
         }
 
-        .download-link:hover {
+        /* زر العرض باللون اللبني الشفاف */
+        .view-btn {
+            background-color: transparent;
+            color: #00e5ff;
+            border: 1px solid #00e5ff;
+        }
+
+        .view-btn:hover {
+            background-color: rgba(0, 229, 255, 0.1);
+            color: #ffffff;
+        }
+
+        /* زر التنزيل باللون اللبني المصمت */
+        .down-btn {
+            background-color: #00e5ff;
+            color: #0b1a24;
+            border: 1px solid #00e5ff;
+        }
+
+        .down-btn:hover {
             background-color: #ffffff;
+            border-color: #ffffff;
         }
     </style>
 </head>
@@ -158,28 +188,46 @@
             <div class="course-part">
                 <div class="course-title">🧪 Carbohydrates Course</div>
                 <div class="files-list">
+                    
                     <div class="file-item">
                         <span class="file-name">📖 Carbohydrates Book</span>
-                        <a href="carbohydrates book for 2nd Y bioch  stud..pdf" class="download-link" download>Download</a>
+                        <div class="btn-group">
+                            <a href="carbohydrates book for 2nd Y bioch  stud..pdf" class="action-btn view-btn" target="_blank">View</a>
+                            <a href="carbohydrates book for 2nd Y bioch  stud..pdf" class="action-btn down-btn" download>Download</a>
+                        </div>
                     </div>
+
                     <div class="file-item">
                         <span class="file-name">📄 Hetero Lecture</span>
-                        <a href="lecture 9 hetero.pdf" class="download-link" download>Download</a>
+                        <div class="btn-group">
+                            <a href="lecture 9 hetero.pdf" class="action-btn view-btn" target="_blank">View</a>
+                            <a href="lecture 9 hetero.pdf" class="action-btn down-btn" download>Download</a>
+                        </div>
                     </div>
+
                     <div class="file-item">
                         <span class="file-name">📝 Scan Notes</span>
-                        <a href="Scan.pdf" class="download-link" download>Download</a>
+                        <div class="btn-group">
+                            <a href="Scan.pdf" class="action-btn view-btn" target="_blank">View</a>
+                            <a href="Scan.pdf" class="action-btn down-btn" download>Download</a>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
             <div class="course-part">
                 <div class="course-title">🧈 Lipids Course</div>
                 <div class="files-list">
+                    
                     <div class="file-item">
                         <span class="file-name">📄 Lipid Physiologic Importance</span>
-                        <a href="Lipid_physiologic_importance.pdf" class="download-link" download>Download</a>
+                        <div class="btn-group">
+                            <a href="Lipid_physiologic_importance.pdf" class="action-btn view-btn" target="_blank">View</a>
+                            <a href="Lipid_physiologic_importance.pdf" class="action-btn down-btn" download>Download</a>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
