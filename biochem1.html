@@ -1,77 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biochemistry 1 - BioChem Data</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b1a24; 
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-<title>Biochemistry 2</title>
+        .back-btn {
+            text-decoration: none;
+            color: #00e5ff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            transition: color 0.2s ease;
+            align-self: flex-start;
+            max-width: 500px;
+            width: 100%;
+        }
 
-<style>
-body{
-    background:#0b1a24;
-    color:white;
-    font-family:Segoe UI,sans-serif;
-    max-width:700px;
-    margin:auto;
-    padding:20px;
-}
+        .back-btn:hover {
+            color: #ffffff;
+        }
 
-h1{
-    text-align:center;
-    color:#00e5ff;
-}
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            width: 100%;
+            max-width: 500px;
+        }
 
-.card{
-    background:#132d3e;
-    border:1px solid #1e4560;
-    border-radius:10px;
-    margin:12px 0;
-}
+        h1 {
+            font-size: 2.3rem;
+            margin: 10px 0;
+            color: #00e5ff; 
+        }
 
-.card a{
-    display:block;
-    padding:15px;
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
-}
+        .main-container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-.card:hover{
-    border-color:#00e5ff;
-}
+        /* تنسيق الأزرار الرئيسية */
+        .category-btn {
+            background-color: #132d3e;
+            border: 1px solid #1e4560;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #ffffff;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+        }
 
-.back-btn{
-    color:#00e5ff;
-    text-decoration:none;
-}
-</style>
+        .category-btn:hover {
+            background-color: #1a3e56;
+            border-color: #00e5ff;
+        }
+
+        /* لوحة التبويب الداخلي المنسدل الرئيسي */
+        .content-panel {
+            display: none;
+            background-color: #08131a;
+            border: 1px dashed #1e4560;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: -5px;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* تنسيق كروت الأقسام الداخلية لكورس الليبيدات والكربوهيدرات */
+        .course-part {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .course-title {
+            font-size: 1.1rem;
+            color: #ffd54f; /* لون ذهبي مميز لعنوان الكورس */
+            margin: 0 0 10px 0;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(255, 213, 79, 0.2);
+            padding-bottom: 5px;
+        }
+
+        .files-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        /* كرت المحاضرة الفردي */
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .file-name {
+            font-size: 0.95rem;
+            color: #e0e0e0;
+        }
+
+        .download-link {
+            text-decoration: none;
+            background-color: #00e5ff;
+            color: #0b1a24;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+        }
+
+        .download-link:hover {
+            background-color: #ffffff;
+        }
+    </style>
 </head>
-
 <body>
 
-<a href="second-year.html" class="back-btn">← Second Year</a>
+    <a href="second-year.html" class="back-btn">← Second Year</a>
 
-<h1>🧬 Biochemistry 1</h1>
+    <header>
+        <h1>🧬 Biochemistry 1</h1>
+    </header>
 
-<div class="card">
-<a href="biochem2-lectures.html">📚 Lectures</a>
-</div>
+    <div class="main-container">
 
-<div class="card">
-<a href="biochem2-summaries.html">📝 Summaries</a>
-</div>
+        <button class="category-btn" onclick="togglePanel('lectures-panel')">📚 Lectures</button>
+        <div id="lectures-panel" class="content-panel">
+            
+            <div class="course-part">
+                <div class="course-title">🧪 Carbohydrates Course</div>
+                <div class="files-list">
+                    <div class="file-item">
+                        <span class="file-name">📄 Lecture 1: Monosaccharides</span>
+                        <a href="files/carbo-lec1.pdf" class="download-link" target="_blank">View</a>
+                    </div>
+                    <div class="file-item">
+                        <span class="file-name">📄 Lecture 2: Disaccharides</span>
+                        <a href="files/carbo-lec2.pdf" class="download-link" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
 
-<div class="card">
-<a href="biochem2-practical.html">🧪 Practical</a>
-</div>
+            <div class="course-part">
+                <div class="course-title">🧈 Lipids Course</div>
+                <div class="files-list">
+                    <div class="file-item">
+                        <span class="file-name">📄 Lecture 1: Classification of Lipids</span>
+                        <a href="files/lipids-lec1.pdf" class="download-link" target="_blank">View</a>
+                    </div>
+                    <div class="file-item">
+                        <span class="file-name">📄 Lecture 2: Fatty Acids</span>
+                        <a href="files/lipids-lec2.pdf" class="download-link" target="_blank">View</a>
+                    </div>
+                </div>
+            </div>
 
-<div class="card">
-<a href="biochem2-exams.html">📄 Exams</a>
-</div>
+        </div>
 
-<div class="card">
-<a href="biochem2-videos.html">🎥 Videos</a>
-</div>
+        <button class="category-btn" onclick="togglePanel('summaries-panel')">📝 Summaries</button>
+        <div id="summaries-panel" class="content-panel">
+            <div class="files-list">
+                <div class="file-item">
+                    <span class="file-name">✨ Revision Summary</span>
+                    <a href="files/biochem-summary1.pdf" class="download-link" target="_blank">View</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="category-btn" onclick="togglePanel('practical-panel')">🔬 Practical</button>
+        <div id="practical-panel" class="content-panel">
+            <div class="files-list">
+                <div class="file-item">
+                    <span class="file-name">🧪 Lab 1: Carbohydrates Tests</span>
+                    <a href="files/lab-carbo.pdf" class="download-link" target="_blank">View</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="category-btn" onclick="togglePanel('exams-panel')">📄 Exams</button>
+        <div id="exams-panel" class="content-panel">
+            <div class="files-list">
+                <div class="file-item">
+                    <span class="file-name">📝 Final Exam 2025</span>
+                    <a href="files/biochem-exam2025.pdf" class="download-link" target="_blank">View</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="category-btn" onclick="togglePanel('videos-panel')">🎬 Videos</button>
+        <div id="videos-panel" class="content-panel">
+            <div class="files-list">
+                <div class="file-item">
+                    <span class="file-name">🎥 Carbohydrates Structure Video</span>
+                    <a href="https://youtube.com/..." class="download-link" target="_blank">Watch</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function togglePanel(panelId) {
+            var panel = document.getElementById(panelId);
+            if (panel.style.display === "flex") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "flex";
+            }
+        }
+    </script>
 
 </body>
 </html>
