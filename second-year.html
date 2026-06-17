@@ -8,8 +8,8 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* خلفية مريحة مع تدريج داكن يناسب طبيعة الكيمياء */
-            background: linear-gradient(135px, #0f2027, #203a43, #2c5364);
+            /* خلفية كحلية داكنة جداً مستوحاة من الصفحة الرئيسية */
+            background-color: #0b1a24; 
             color: #ffffff;
             min-height: 100vh;
             display: flex;
@@ -21,73 +21,80 @@
 
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             margin: 10px 0;
-            color: #00ffff;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+            /* لون لبني سماوي واضح قوي */
+            color: #00e5ff; 
+        }
+
+        p {
+            color: #b0bec5;
+            margin: 0;
+            font-size: 1rem;
         }
 
         h2 {
-            font-size: 1.8rem;
-            color: #ffeaa7;
-            border-bottom: 2px solid rgba(255, 234, 167, 0.3);
-            padding-bottom: 5px;
-            margin-top: 30px;
+            font-size: 1.6rem;
+            /* لون ذهبي هادئ وواضح لقسم الترم */
+            color: #ffd54f; 
+            border-bottom: 2px solid rgba(255, 213, 79, 0.3);
+            padding-bottom: 8px;
+            margin-top: 35px;
             width: 100%;
-            max-width: 600px;
+            max-width: 500px;
             text-align: center;
         }
 
         .semester-section {
             width: 100%;
-            max-width: 600px;
+            max-width: 500px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
+            margin-top: 15px;
         }
 
-        /* تنسيق الأزرار (الكروت الشفافة المميزة) */
+        /* تنسيق الأزرار: خلفية كحلية زرقاء واضحة مع حواف محددة */
         .card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 18px;
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #132d3e;
+            border: 1px solid #1e4560;
+            border-radius: 10px;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
+        /* تأثير عند تمرير الماوس أو اللمس */
         .card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: #00ffff;
-            box-shadow: 0 8px 15px rgba(0, 255, 255, 0.2);
+            transform: scale(1.02);
+            background-color: #1a3e56;
+            border-color: #00e5ff;
         }
 
         .card a {
             text-decoration: none;
             color: #ffffff;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 600;
+            padding: 15px;
             display: block;
-            width: 100%;
+            text-align: center;
         }
 
-        /* تمييز كرت الامتحانات بلون مختلف وجذاب */
+        /* تمييز كرت الامتحانات بلون أحمر داكن ونصوص واضحة */
         .exam-card {
-            background: rgba(231, 76, 60, 0.15);
-            border-color: rgba(231, 76, 60, 0.3);
+            background-color: #5c1d1d;
+            border-color: #7f2b2b;
         }
         .exam-card:hover {
-            background: rgba(231, 76, 60, 0.25);
-            border-color: #e74c3c;
-            box-shadow: 0 8px 15px rgba(231, 76, 60, 0.3);
+            background-color: #732424;
+            border-color: #ff4d4d;
+        }
+        .exam-card a {
+            color: #ffcccc;
         }
     </style>
 </head>
