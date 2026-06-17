@@ -8,7 +8,6 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* خلفية كحلية داكنة جداً مستوحاة من الصفحة الرئيسية */
             background-color: #0b1a24; 
             color: #ffffff;
             min-height: 100vh;
@@ -17,19 +16,37 @@
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
+            position: relative;
         }
-        
-<a href="index.html" class="back-btn">← Home</a>
-        
+
+        /* تنسيق زر العودة إلى الرئيسية */
+        .back-btn {
+            text-decoration: none;
+            color: #00e5ff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+            transition: color 0.2s ease;
+            align-self: flex-start; /* يضمن بقاء الزر على اليسار في الشاشات الكبيرة */
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .back-btn:hover {
+            color: #ffffff;
+        }
+
         header {
             text-align: center;
             margin-bottom: 25px;
+            width: 100%;
+            max-width: 500px;
         }
 
         h1 {
             font-size: 2.3rem;
             margin: 10px 0;
-            /* لون لبني سماوي واضح قوي */
             color: #00e5ff; 
         }
 
@@ -41,7 +58,6 @@
 
         h2 {
             font-size: 1.6rem;
-            /* لون ذهبي هادئ وواضح لقسم الترم */
             color: #ffd54f; 
             border-bottom: 2px solid rgba(255, 213, 79, 0.3);
             padding-bottom: 8px;
@@ -60,7 +76,6 @@
             margin-top: 15px;
         }
 
-        /* تنسيق الأزرار: خلفية كحلية زرقاء واضحة مع حواف محددة */
         .card {
             background-color: #132d3e;
             border: 1px solid #1e4560;
@@ -69,7 +84,6 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
-        /* تأثير عند تمرير الماوس أو اللمس */
         .card:hover {
             transform: scale(1.02);
             background-color: #1a3e56;
@@ -86,7 +100,6 @@
             text-align: center;
         }
 
-        /* تمييز كرت الامتحانات بلون أحمر داكن ونصوص واضحة */
         .exam-card {
             background-color: #5c1d1d;
             border-color: #7f2b2b;
@@ -101,6 +114,9 @@
     </style>
 </head>
 <body>
+
+    <!-- تم إضافة زر العودة هنا في البداية ليكون واضحًا للمستخدم -->
+    <a href="index.html" class="back-btn">← Home</a>
 
     <header>
         <h1>🧬 Second Year 📁</h1>
