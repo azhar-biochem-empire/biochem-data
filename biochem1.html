@@ -55,7 +55,6 @@
             gap: 15px;
         }
 
-        /* تنسيق الأزرار الرئيسية */
         .category-btn {
             background-color: #132d3e;
             border: 1px solid #1e4560;
@@ -79,7 +78,6 @@
             border-color: #00e5ff;
         }
 
-        /* لوحة التبويب الداخلي المنسدل الرئيسي */
         .content-panel {
             display: none;
             background-color: #08131a;
@@ -91,7 +89,6 @@
             gap: 15px;
         }
 
-        /* تنسيق كروت الأقسام الداخلية لكورس الليبيدات والكربوهيدرات */
         .course-part {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -101,7 +98,7 @@
 
         .course-title {
             font-size: 1.1rem;
-            color: #ffd54f; /* لون ذهبي مميز لعنوان الكورس */
+            color: #ffd54f; 
             margin: 0 0 10px 0;
             font-weight: bold;
             border-bottom: 1px solid rgba(255, 213, 79, 0.2);
@@ -114,7 +111,6 @@
             gap: 8px;
         }
 
-        /* كرت المحاضرة الفردي */
         .file-item {
             display: flex;
             justify-content: space-between;
@@ -163,12 +159,8 @@
                 <div class="course-title">🧪 Carbohydrates Course</div>
                 <div class="files-list">
                     <div class="file-item">
-                        <span class="file-name">📄 Lecture 1: Monosaccharides</span>
-                        <a href="files/carbo-lec1.pdf" class="download-link" target="_blank">View</a>
-                    </div>
-                    <div class="file-item">
-                        <span class="file-name">📄 Lecture 2: Disaccharides</span>
-                        <a href="files/carbo-lec2.pdf" class="download-link" target="_blank">View</a>
+                        <span class="file-name">📄 Carbohydrates Book for 2nd Year</span>
+                        <a href="carbohydrates book for 2nd Y bioch  stud..pdf" class="download-link" target="_blank">View</a>
                     </div>
                 </div>
             </div>
@@ -177,12 +169,18 @@
                 <div class="course-title">🧈 Lipids Course</div>
                 <div class="files-list">
                     <div class="file-item">
-                        <span class="file-name">📄 Lecture 1: Classification of Lipids</span>
-                        <a href="files/lipids-lec1.pdf" class="download-link" target="_blank">View</a>
+                        <span class="file-name">📄 Lipid Physiologic Importance</span>
+                        <a href="Lipid_physiologic_importance.pdf" class="download-link" target="_blank">View</a>
                     </div>
+                </div>
+            </div>
+
+            <div class="course-part">
+                <div class="course-title">⬡ Heterocyclic Chemistry Lectures</div>
+                <div class="files-list">
                     <div class="file-item">
-                        <span class="file-name">📄 Lecture 2: Fatty Acids</span>
-                        <a href="files/lipids-lec2.pdf" class="download-link" target="_blank">View</a>
+                        <span class="file-name">📄 Lecture 9: Heterocyclic Systems</span>
+                        <a href="lecture 9 hetero.pdf" class="download-link" target="_blank">View</a>
                     </div>
                 </div>
             </div>
@@ -192,40 +190,28 @@
         <button class="category-btn" onclick="togglePanel('summaries-panel')">📝 Summaries</button>
         <div id="summaries-panel" class="content-panel">
             <div class="files-list">
-                <div class="file-item">
-                    <span class="file-name">✨ Revision Summary</span>
-                    <a href="files/biochem-summary1.pdf" class="download-link" target="_blank">View</a>
-                </div>
+                <div class="file-item"><span class="file-name">No files uploaded yet</span></div>
             </div>
         </div>
 
         <button class="category-btn" onclick="togglePanel('practical-panel')">🔬 Practical</button>
         <div id="practical-panel" class="content-panel">
             <div class="files-list">
-                <div class="file-item">
-                    <span class="file-name">🧪 Lab 1: Carbohydrates Tests</span>
-                    <a href="files/lab-carbo.pdf" class="download-link" target="_blank">View</a>
-                </div>
+                <div class="file-item"><span class="file-name">No files uploaded yet</span></div>
             </div>
         </div>
 
         <button class="category-btn" onclick="togglePanel('exams-panel')">📄 Exams</button>
         <div id="exams-panel" class="content-panel">
             <div class="files-list">
-                <div class="file-item">
-                    <span class="file-name">📝 Final Exam 2025</span>
-                    <a href="files/biochem-exam2025.pdf" class="download-link" target="_blank">View</a>
-                </div>
+                <div class="file-item"><span class="file-name">No files uploaded yet</span></div>
             </div>
         </div>
 
         <button class="category-btn" onclick="togglePanel('videos-panel')">🎬 Videos</button>
         <div id="videos-panel" class="content-panel">
             <div class="files-list">
-                <div class="file-item">
-                    <span class="file-name">🎥 Carbohydrates Structure Video</span>
-                    <a href="https://youtube.com/..." class="download-link" target="_blank">Watch</a>
-                </div>
+                <div class="file-item"><span class="file-name">No videos linked yet</span></div>
             </div>
         </div>
 
