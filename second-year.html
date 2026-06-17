@@ -1,70 +1,127 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Year - BioChem Data</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* خلفية مريحة مع تدريج داكن يناسب طبيعة الكيمياء */
+            background: linear-gradient(135px, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-<title>Second Year</title>
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #ffeaa7;
+            border-bottom: 2px solid rgba(255, 234, 167, 0.3);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .semester-section {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* تنسيق الأزرار (الكروت الشفافة المميزة) */
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #00ffff;
+            box-shadow: 0 8px 15px rgba(0, 255, 255, 0.2);
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: block;
+            width: 100%;
+        }
+
+        /* تمييز كرت الامتحانات بلون مختلف وجذاب */
+        .exam-card {
+            background: rgba(231, 76, 60, 0.15);
+            border-color: rgba(231, 76, 60, 0.3);
+        }
+        .exam-card:hover {
+            background: rgba(231, 76, 60, 0.25);
+            border-color: #e74c3c;
+            box-shadow: 0 8px 15px rgba(231, 76, 60, 0.3);
+        }
+    </style>
 </head>
-
-
 <body>
 
+    <header>
+        <h1>🧬 Second Year 📁</h1>
+        <p>Al-Azhar University - Cairo</p>
+    </header>
 
-<h1>Second Year</h1>
+    <!-- First Semester -->
+    <h2>First Semester</h2>
+    <div class="semester-section">
+        <div class="card exam-card"><a href="exams-2026-s1.html">📄 FINAL EXAMS 2025-2026 📜</a></div>
+        <div class="card"><a href="biochem1.html">Biochemistry 1</a></div>
+        <div class="card"><a href="biostats.html">Biostatistics</a></div>
+        <div class="card"><a href="inorganic.html">Inorganic Chemistry</a></div>
+        <div class="card"><a href="microbiology.html">Microbiology Physiology</a></div>
+        <div class="card"><a href="organic2-s1.html">Organic Chemistry</a></div>
+        <div class="card"><a href="physics.html">Physics</a></div>
+    </div>
 
-
-<h2>First Semester</h2>
-
-
-<ul>
-
-<li><a href="#">📑FINAL EXAMS 2025-2026📜</a></li>
-
-<li><a href="#">Biochemistry 1</a></li>
-
-<li><a href="#">Biostatistics</a></li>
-
-<li><a href="#">Inorganic Chemistry</a></li>
-  
-<li><a href="#">Microbiology Physiology</a></li> 
-
-<li><a href="#">Organic Chemistry</a></li>
-
-<li><a href="#">Physics</a></li>
-
-
-</ul>
-
-
-
-<h2>Second Semester</h2>
-
-
-<ul>
-
-<li><a href="#">📑FINAL EXAMS 2025-2026📜</a></li>
-
-<li><a href="#">السيرة النبوية</a></li>
-
-<li><a href="#">Biochemistry 2</li>
-
-<li><a href="#">English</a></li>
-
-<li><a href="#">Organic Chemistry</a></li>
-
-<li><a href="#">Physical Chemistry</a></li>
-
-<li><a href="#">Physiology</a></li>
-
-<li><a href="#">Quran</a></li>
-
-
-</ul>
-
-
+    <!-- Second Semester -->
+    <h2>Second Semester</h2>
+    <div class="semester-section">
+        <div class="card exam-card"><a href="exams-2026-s2.html">📄 FINAL EXAMS 2025-2026 📜</a></div>
+        <div class="card"><a href="seerah.html">السيرة النبوية</a></div>
+        <div class="card"><a href="biochem2.html">Biochemistry 2</a></div>
+        <div class="card"><a href="english.html">English</a></div>
+        <div class="card"><a href="organic2-s2.html">Organic Chemistry</a></div>
+        <div class="card"><a href="physical-chem.html">Physical Chemistry</a></div>
+        <div class="card"><a href="physiology.html">Physiology</a></div>
+        <div class="card"><a href="quran.html">Quran</a></div>
+    </div>
 
 </body>
-
 </html>
