@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Islamic History - BioChem Data</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #101205 0%, #2a2e0e 50%, #424715 100%);
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .back-btn { text-decoration: none; color: #00e5ff; font-size: 1.1rem; font-weight: 600; margin-bottom: 15px; align-self: flex-start; max-width: 500px; width: 100%; }
+        header { text-align: center; margin-bottom: 25px; width: 100%; max-width: 500px; }
+        h1 { font-size: 2.1rem; color: #ffd54f; }
+        .main-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
+        .category-btn { background-color: #26290f; border: 1px solid #3c4019; border-radius: 10px; padding: 15px; font-size: 1.15rem; font-weight: 600; color: #ffffff; cursor: pointer; text-align: left; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; }
+        .content-panel { display: none; background-color: #151709; border: 1px dashed #3c4019; border-radius: 10px; padding: 15px; flex-direction: column; gap: 15px; }
+        .file-item { display: flex; flex-direction: column; gap: 10px; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .file-name { font-size: 1rem; color: #e0e0e0; }
+        .btn-group { display: flex; gap: 8px; justify-content: flex-end; }
+        .action-btn { text-decoration: none; padding: 6px 14px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; text-align: center; flex: 1; max-width: 100px; }
+        .view-btn { background-color: transparent; color: #ffd54f; border: 1px solid #ffd54f; }
+        .down-btn { background-color: #ffd54f; color: #0b1a24; border: 1px solid #ffd54f; }
+    </style>
+</head>
+<body>
+    <a href="second-year.html" class="back-btn">← Second Year</a>
+    <header><h1>🕌 السيرة النبوية</h1></header>
+    <div class="main-container">
+        <button class="category-btn" onclick="togglePanel('sira-panel')">📖 كتاب المنهج المقرّر</button>
+        <div id="sira-panel" class="content-panel" style="display: flex;">
+            <div class="file-item">
+                <span class="file-name">📄 كتاب منهج السيرة النبوية كامل</span>
+                <div class="btn-group">
+                    <a href="sira_book.pdf" class="action-btn view-btn" target="_blank">View</a>
+                    <a href="sira_book.pdf" class="action-btn down-btn" download>Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function togglePanel(panelId) {
+            var panel = document.getElementById(panelId);
+            panel.style.display = (panel.style.display === "none" || panel.style.display === "") ? "flex" : "none";
+        }
+    </script>
+</body>
+</html>
