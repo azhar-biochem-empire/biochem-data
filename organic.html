@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Organic Chemistry - BioChem Data</title>
+    <style>
+        body {
+            margin: 0; font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #150824 0%, #281242 50%, #3b1d5c 100%);
+            background-attachment: fixed; color: #ffffff; min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center; padding: 20px; box-sizing: border-box;
+        }
+        .back-btn { text-decoration: none; color: #00e5ff; font-size: 1.1rem; font-weight: 600; margin-bottom: 15px; align-self: flex-start; max-width: 500px; width: 100%; }
+        header { text-align: center; margin-bottom: 25px; width: 100%; max-width: 500px; }
+        h1 { font-size: 2rem; color: #d500f9; }
+        .main-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
+        .category-btn { background-color: #281242; border: 1px solid #3b1d5c; border-radius: 10px; padding: 15px; font-size: 1.15rem; font-weight: 600; color: #ffffff; cursor: pointer; text-align: left; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; }
+        .content-panel { display: none; background-color: #11051e; border: 1px dashed #3b1d5c; border-radius: 10px; padding: 15px; flex-direction: column; gap: 15px; }
+        .sub-title { font-size: 1rem; color: #00e5ff; margin: 8px 0 5px 0; font-weight: bold; border-bottom: 1px solid rgba(0,229,255,0.2); padding-bottom: 3px;}
+        .file-item { display: flex; flex-direction: column; gap: 10px; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .file-name { font-size: 0.95rem; color: #e0e0e0; }
+        .btn-group { display: flex; gap: 8px; justify-content: flex-end; }
+        .action-btn { text-decoration: none; padding: 5px 12px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; text-align: center; flex: 1; max-width: 90px; }
+        .view-btn { background-color: transparent; color: #d500f9; border: 1px solid #d500f9; }
+        .down-btn { background-color: #d500f9; color: #ffffff; border: 1px solid #d500f9; }
+    </style>
+</head>
+<body>
+    <a href="second-year.html" class="back-btn">← Second Year</a>
+    <header><h1>🧪 Organic Chemistry</h1></header>
+    <div class="main-container">
+        
+        <button class="category-btn" onclick="togglePanel('course1-panel')">🧬 1. Proteins & Amino Acids</button>
+        <div id="course1-panel" class="content-panel">
+            <div class="sub-title">📚 Course Book</div>
+            <div class="file-item"><span class="file-name">📄 Proteins & Amino Acids Full Book</span><div class="btn-group"><a href="org-protein-book.pdf" class="action-btn view-btn" target="_blank">View</a><a href="org-protein-book.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="sub-title">📝 القديمة تبييضات</div>
+            <div class="file-item"><span class="file-name">📝 تبييض بروتين 1</span><div class="btn-group"><a href="tab-protein1.pdf" class="action-btn view-btn" target="_blank">View</a><a href="tab-protein1.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📝 تبييض بروتين 2</span><div class="btn-group"><a href="tab-protein2.pdf" class="action-btn view-btn" target="_blank">View</a><a href="tab-protein2.pdf" class="action-btn down-btn" download>Download</a></div></div>
+        </div>
+
+        <button class="category-btn" onclick="togglePanel('course2-panel')">📐 2. Stereochemistry</button>
+        <div id="course2-panel" class="content-panel">
+            <div class="sub-title">📖 Reference Book</div>
+            <div class="file-item"><span class="file-name">📄 Stereochemistry Reference Book</span><div class="btn-group"><a href="stereo-reference.pdf" class="action-btn view-btn" target="_blank">View</a><a href="stereo-reference.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="sub-title">📝 تبييضات قديمة</div>
+            <div class="file-item"><span class="file-name">📝 تبييض استيريو 1</span><div class="btn-group"><a href="tab-stereo1.pdf" class="action-btn view-btn" target="_blank">View</a><a href="tab-stereo1.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📝 تبييض استيريو 2</span><div class="btn-group"><a href="tab-stereo2.pdf" class="action-btn view-btn" target="_blank">View</a><a href="tab-stereo2.pdf" class="action-btn down-btn" download>Download</a></div></div>
+        </div>
+
+        <button class="category-btn" onclick="togglePanel('course3-panel')">🧪 3. Heterocyclic Compounds</button>
+        <div id="course3-panel" class="content-panel">
+            <div class="sub-title">📚 Lectures </div>
+            <div class="file-item"><span class="file-name">📄 Lecture 1</span><div class="btn-group"><a href="hetero-lec1.pdf" class="action-btn view-btn" target="_blank">View</a><a href="hetero-lec1.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Lecture 2 & 3</span><div class="btn-group"><a href="hetero-lec2-3.pdf" class="action-btn view-btn" target="_blank">View</a><a href="hetero-lec2-3.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Lecture 4 & 5</span><div class="btn-group"><a href="hetero-lec4-5.pdf" class="action-btn view-btn" target="_blank">View</a><a href="hetero-lec4-5.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Lecture 6</span><div class="btn-group"><a href="hetero-lec6.pdf" class="action-btn view-btn" target="_blank">View</a><a href="hetero-lec6.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Lecture 7</span><div class="btn-group"><a href="hetero-lec7.pdf" class="action-btn view-btn" target="_blank">View</a><a href="hetero-lec7.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Lecture 8</span><div class="btn-group"><a href="hetero-lec8.pdf" class="action-btn view-btn" target="_blank">View</a><a href="hetero-lec8.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Lecture 9</span><div class="btn-group"><a href="hetero-lec9.pdf" class="action-btn view-btn" target="_blank">View</a><a href="hetero-lec9.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            
+            <div class="sub-title">📖 الكتب والتبييضات المساعدة</div>
+            <div class="file-item"><span class="file-name">📘 كتاب الدكتور صابر</span><div class="btn-group"><a href="saber-book.pdf" class="action-btn view-btn" target="_blank">View</a><a href="saber-book.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📝 تبييضات قديمة - هيتيرو</span><div class="btn-group"><a href="tab-hetero.pdf" class="action-btn view-btn" target="_blank">View</a><a href="tab-hetero.pdf" class="action-btn down-btn" download>Download</a></div></div>
+        </div>
+
+        <button class="category-btn" onclick="togglePanel('practical-panel')">🔬 Practical (العملي والاسكيمات)</button>
+        <div id="practical-panel" class="content-panel">
+            <div class="sub-title">📋 Schemes</div>
+            <div class="file-item">
+                <span class="file-name">📄 Organic Practical Schemes</span>
+                <div class="btn-group">
+                    <a href="organic-schemes.pdf" class="action-btn view-btn" target="_blank">View</a>
+                    <a href="organic-schemes.pdf" class="action-btn down-btn" download>Download</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function togglePanel(panelId) {
+            var panel = document.getElementById(panelId);
+            panel.style.display = (panel.style.display === "none" || panel.style.display === "") ? "flex" : "none";
+        }
+    </script>
+</body>
+</html>
