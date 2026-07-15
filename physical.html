@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Physical Chemistry - BioChem Data</title>
+    <style>
+        body {
+            margin: 0; font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #07131a 0%, #102e3c 50%, #1a4256 100%);
+            background-attachment: fixed; color: #ffffff; min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center; padding: 20px; box-sizing: border-box;
+        }
+        .back-btn { text-decoration: none; color: #00e5ff; font-size: 1.1rem; font-weight: 600; margin-bottom: 15px; align-self: flex-start; max-width: 500px; width: 100%; }
+        header { text-align: center; margin-bottom: 25px; width: 100%; max-width: 500px; }
+        h1 { font-size: 2rem; color: #00e5ff; }
+        .main-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
+        .category-btn { background-color: #102e3c; border: 1px solid #1a4256; border-radius: 10px; padding: 15px; font-size: 1.15rem; font-weight: 600; color: #ffffff; cursor: pointer; text-align: left; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; }
+        .content-panel { display: none; background-color: #08161f; border: 1px dashed #1a4256; border-radius: 10px; padding: 15px; flex-direction: column; gap: 15px; }
+        .sub-title { font-size: 1rem; color: #ffd54f; margin: 8px 0 5px 0; font-weight: bold; border-bottom: 1px solid rgba(255,213,79,0.2); padding-bottom: 3px;}
+        .file-item { display: flex; flex-direction: column; gap: 10px; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .file-name { font-size: 0.95rem; color: #e0e0e0; }
+        .btn-group { display: flex; gap: 8px; justify-content: flex-end; }
+        .action-btn { text-decoration: none; padding: 5px 12px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; text-align: center; flex: 1; max-width: 90px; }
+        .view-btn { background-color: transparent; color: #00e5ff; border: 1px solid #00e5ff; }
+        .down-btn { background-color: #00e5ff; color: #0b1a24; border: 1px solid #00e5ff; }
+    </style>
+</head>
+<body>
+    <a href="second-year.html" class="back-btn">← Second Year</a>
+    <header><h1>📊 Physical Chemistry</h1></header>
+    <div class="main-container">
+        
+        <button class="category-btn" onclick="togglePanel('theory-panel')">📚 Lectures </button>
+        <div id="theory-panel" class="content-panel">
+            
+            <div class="sub-title">👨‍🏫 د. حسن شحاتة</div>
+            <div class="file-item"><span class="file-name">📝 ملفات تبييض الدكتور حسن شحاتة</span><div class="btn-group"><a href="phy-hassan-shahat.pdf" class="action-btn view-btn" target="_blank">View</a><a href="phy-hassan-shahat.pdf" class="action-btn down-btn" download>Download</a></div></div>
+
+            <div class="sub-title">👨‍🏫 د. عبدالعليم سليمان</div>
+            <div class="file-item"><span class="file-name">📖 كتاب وتبييض د. عبدالعليم سليمان</span><div class="btn-group"><a href="phy-abdelalim.pdf" class="action-btn view-btn" target="_blank">View</a><a href="phy-abdelalim.pdf" class="action-btn down-btn" download>Download</a></div></div>
+
+            <div class="sub-title">👨‍🏫 د. عبدالله عبدالوهاب</div>
+            <div class="file-item"><span class="file-name">📄 ملف البلازما (Plasma)</span><div class="btn-group"><a href="phy-plasma.pdf" class="action-btn view-btn" target="_blank">View</a><a href="phy-plasma.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 النظرية الحركية (Kinetic Theory)</span><div class="btn-group"><a href="phy-kinetic.pdf" class="action-btn view-btn" target="_blank">View</a><a href="phy-kinetic.pdf" class="action-btn down-btn" download>Download</a></div></div>
+
+            <div class="sub-title">👨‍🏫 د. زينهم الباهي</div>
+            <div class="file-item"><span class="file-name">📄 ملف الفيزرول (Physrol)</span><div class="btn-group"><a href="phy-physrol.pdf" class="action-btn view-btn" target="_blank">View</a><a href="phy-physrol.pdf" class="action-btn down-btn" download>Download</a></div></div>
+
+        </div>
+
+        <button class="category-btn" onclick="togglePanel('practical-panel')">🔬 Practical (العملي)</button>
+        <div id="practical-panel" class="content-panel">
+            <div class="sub-title">🧪 تبييض السكاشن والشيت</div>
+            <div class="file-item"><span class="file-name">📝 تبييضات سكاشن الفيزيائية كاملة</span><div class="btn-group"><a href="phy-sections.pdf" class="action-btn view-btn" target="_blank">View</a><a href="phy-sections.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📝 شيت مادة الكيمياء الفيزيائية</span><div class="btn-group"><a href="phy-sheet.pdf" class="action-btn view-btn" target="_blank">View</a><a href="phy-sheet.pdf" class="action-btn down-btn" download>Download</a></div></div>
+        </div>
+
+    </div>
+    <script>
+        function togglePanel(panelId) {
+            var panel = document.getElementById(panelId);
+            panel.style.display = (panel.style.display === "none" || panel.style.display === "") ? "flex" : "none";
+        }
+    </script>
+</body>
+</html>
