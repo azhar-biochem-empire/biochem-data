@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Biochemistry 2 - BioChem Data</title>
+    <style>
+        body {
+            margin: 0; font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0b1a24 0%, #132d3e 50%, #1a3545 100%);
+            background-attachment: fixed; color: #ffffff; min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center; padding: 20px; box-sizing: border-box;
+        }
+        .back-btn { text-decoration: none; color: #00e5ff; font-size: 1.1rem; font-weight: 600; margin-bottom: 15px; align-self: flex-start; max-width: 500px; width: 100%; }
+        header { text-align: center; margin-bottom: 25px; width: 100%; max-width: 500px; }
+        h1 { font-size: 2rem; color: #00e5ff; }
+        .main-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
+        .category-btn { background-color: #132d3e; border: 1px solid #1e4560; border-radius: 10px; padding: 15px; font-size: 1.15rem; font-weight: 600; color: #ffffff; cursor: pointer; text-align: left; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; }
+        .content-panel { display: none; background-color: #08131a; border: 1px dashed #1e4560; border-radius: 10px; padding: 15px; flex-direction: column; gap: 15px; }
+        .sub-title { font-size: 1rem; color: #ffd54f; margin: 5px 0; font-weight: bold; border-bottom: 1px solid rgba(255,213,79,0.2); padding-bottom: 3px;}
+        .file-item { display: flex; flex-direction: column; gap: 10px; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.05); margin-bottom: 8px; }
+        .file-name { font-size: 0.95rem; color: #e0e0e0; }
+        .btn-group { display: flex; gap: 8px; justify-content: flex-end; }
+        .action-btn { text-decoration: none; padding: 5px 12px; border-radius: 4px; font-weight: bold; font-size: 0.75rem; text-align: center; flex: 1; max-width: 90px; }
+        .view-btn { background-color: transparent; color: #00e5ff; border: 1px solid #00e5ff; }
+        .down-btn { background-color: #00e5ff; color: #0b1a24; border: 1px solid #00e5ff; }
+    </style>
+</head>
+<body>
+    <a href="second-year.html" class="back-btn">← Second Year</a>
+    <header><h1>🧬 Biochemistry 2</h1></header>
+    <div class="main-container">
+        <button class="category-btn" onclick="togglePanel('theory-panel')">📚 Lectures </button>
+        <div id="theory-panel" class="content-panel">
+            <div class="sub-title">🧬 Nucleic Acids Course (8 Lectures)</div>
+            <div class="file-item"><span class="file-name">📄 Nucleic Acids - Lecture 1</span><div class="btn-group"><a href="nucleic-lec1.pdf" class="action-btn view-btn" target="_blank">View</a><a href="nucleic-lec1.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Nucleic Acids - Lecture 2</span><div class="btn-group"><a href="nucleic-lec2.pdf" class="action-btn view-btn" target="_blank">View</a><a href="nucleic-lec2.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Nucleic Acids - Lecture 3</span><div class="btn-group"><a href="nucleic-lec3.pdf" class="action-btn view-btn" target="_blank">View</a><a href="nucleic-lec3.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Nucleic Acids - Lecture 4</span><div class="btn-group"><a href="nucleic-lec4.pdf" class="action-btn view-btn" target="_blank">View</a><a href="nucleic-lec4.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Nucleic Acids - Lecture 5</span><div class="btn-group"><a href="nucleic-lec5.pdf" class="action-btn view-btn" target="_blank">View</a><a href="nucleic-lec5.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Nucleic Acids - Lecture 6</span><div class="btn-group"><a href="nucleic-lec6.pdf" class="action-btn view-btn" target="_blank">View</a><a href="nucleic-lec6.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Nucleic Acids - Lecture 7</span><div class="btn-group"><a href="nucleic-lec7.pdf" class="action-btn view-btn" target="_blank">View</a><a href="nucleic-lec7.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            <div class="file-item"><span class="file-name">📄 Nucleic Acids - Lecture 8</span><div class="btn-group"><a href="nucleic-lec8.pdf" class="action-btn view-btn" target="_blank">View</a><a href="nucleic-lec8.pdf" class="action-btn down-btn" download>Download</a></div></div>
+            
+            <div class="sub-title">🧪 Proteins & Amino Acids Course</div>
+            <div class="file-item">
+                <span class="file-name">📄 Proteins & Amino Acids - Full Book</span>
+                <div class="btn-group">
+                    <a href="proteins_and_amino_acids.pdf" class="action-btn view-btn" target="_blank">View</a>
+                    <a href="proteins_and_amino_acids.pdf" class="action-btn down-btn" download>Download</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="category-btn" onclick="togglePanel('practical-panel')">🔬 Practical (العملي)</button>
+        <div id="practical-panel" class="content-panel">
+            <div class="sub-title">🧪 Practical Lab Sheets</div>
+            <div class="file-item">
+                <span class="file-name">📄 Practical Sheet 1</span>
+                <div class="btn-group">
+                    <a href="biochem2-prac1.pdf" class="action-btn view-btn" target="_blank">View</a>
+                    <a href="biochem2-prac1.pdf" class="action-btn down-btn" download>Download</a>
+                </div>
+            </div>
+            </div>
+    </div>
+    <script>
+        function togglePanel(panelId) {
+            var panel = document.getElementById(panelId);
+            panel.style.display = (panel.style.display === "none" || panel.style.display === "") ? "flex" : "none";
+        }
+    </script>
+</body>
+</html>
