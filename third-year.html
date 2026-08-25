@@ -1,262 +1,199 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>السنة الثالثة - الكيمياء الحيوية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <title>Third Year - Al-Azhar University</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --accent-gold: #f59e0b;
-            --accent-blue: #38bdf8;
-            --accent-purple: #818cf8;
-            --text-main: #f8fafc;
-            --text-sub: #94a3b8;
-            --border-glow: rgba(255, 255, 255, 0.1);
+            --bg-dark: #0b1325;
+            --btn-bg: rgba(15, 30, 50, 0.75);
+            --btn-border: rgba(56, 189, 248, 0.25);
+            --btn-hover-border: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.4);
+            --alert-bg: rgba(139, 0, 0, 0.55);
+            --alert-border: #ff4d4d;
+            --text-gold: #fbbf24;
+            --text-white: #f8fafc;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
+            background-color: var(--bg-dark);
+            /* خلفية علمية فخمة بتأثير زجاجي */
             background-image: 
-                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.08) 0px, transparent 50%);
-            color: var(--text-main);
+                radial-gradient(circle at 50% 30%, rgba(20, 45, 85, 0.7) 0%, rgba(11, 19, 37, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-white);
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 2rem 1rem;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        /* Header UI */
-        .hero-header {
+        .portal-container {
+            width: 100%;
+            max-width: 650px;
             text-align: center;
-            padding: 2.5rem 1rem;
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-glow);
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            margin-bottom: 2rem;
-            position: relative;
-            overflow: hidden;
+            backdrop-filter: blur(8px);
+            padding: 2.5rem 1.5rem;
+            border-radius: 20px;
+            background: rgba(11, 19, 37, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
         }
 
-        .hero-header::before {
+        /* Header Style */
+        .main-title {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        /* Semester Divider */
+        .semester-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-gold);
+            margin: 1.8rem 0 1.2rem;
+            position: relative;
+            display: inline-block;
+            padding: 0 15px;
+        }
+
+        .semester-title::before, .semester-title::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-gold), var(--accent-purple));
+            top: 50%;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--text-gold));
         }
 
-        .hero-title {
-            font-size: 2.4rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #fff 30%, var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
+        .semester-title::before { right: 100%; }
+        .semester-title::after { left: 100%; background: linear-gradient(270deg, transparent, var(--text-gold)); }
+
+        /* Buttons Grid System */
+        .buttons-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
         }
 
-        .hero-subtitle {
-            color: var(--text-sub);
-            font-size: 1.1rem;
-        }
-
-        /* Search Bar */
-        .search-box {
-            margin: 1.5rem auto 0;
-            max-width: 500px;
-            position: relative;
-        }
-
-        .search-input {
+        .nav-btn {
+            display: block;
             width: 100%;
-            padding: 0.8rem 1.2rem;
-            border-radius: 50px;
-            border: 1px solid var(--border-glow);
-            background: rgba(15, 23, 42, 0.6);
-            color: #fff;
-            font-size: 1rem;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .search-input:focus {
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
-        }
-
-        /* Subject Cards Grid */
-        .subject-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-glow);
-            border-radius: 20px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(8px);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .subject-card:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .subject-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid var(--border-glow);
-            padding-bottom: 0.8rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .section-tag {
-            font-size: 0.95rem;
-            color: var(--accent-purple);
-            margin: 1rem 0 0.5rem;
-            font-weight: 600;
-        }
-
-        /* Files List */
-        .file-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 12px;
-        }
-
-        .file-item {
-            background: rgba(15, 23, 42, 0.5);
-            border: 1px solid rgba(255,255,255,0.05);
+            padding: 1rem 1.5rem;
+            background: var(--btn-bg);
+            border: 1.5px solid var(--btn-border);
             border-radius: 12px;
-            padding: 0.8rem 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: 0.2s;
-        }
-
-        .file-item:hover {
-            background: rgba(56, 189, 248, 0.08);
-            border-color: rgba(56, 189, 248, 0.3);
-        }
-
-        .file-name {
-            font-size: 0.9rem;
+            color: var(--text-white);
             font-weight: 600;
-            color: #e2e8f0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 60%;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 6px;
-        }
-
-        .btn {
-            padding: 0.3rem 0.7rem;
-            font-size: 0.8rem;
-            font-weight: 700;
-            border-radius: 8px;
+            font-size: 1.05rem;
             text-decoration: none;
-            transition: 0.2s;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-view {
-            background: rgba(56, 189, 248, 0.15);
-            color: var(--accent-blue);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+        .nav-btn:hover {
+            border-color: var(--btn-hover-border);
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 8px 25px var(--accent-glow);
+            background: rgba(20, 45, 75, 0.85);
+            color: #ffffff;
         }
 
-        .btn-view:hover {
-            background: var(--accent-blue);
-            color: #000;
+        /* Distinct Style for Exams/Alert Button */
+        .nav-btn.alert-btn {
+            background: var(--alert-bg);
+            border-color: var(--alert-border);
+            color: #ffffff;
+            font-weight: 700;
         }
 
-        .btn-down {
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--accent-gold);
-            border: 1px solid rgba(245, 158, 11, 0.3);
+        .nav-btn.alert-btn:hover {
+            background: rgba(185, 28, 28, 0.85);
+            border-color: #ff6b6b;
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.5);
         }
 
-        .btn-down:hover {
-            background: var(--accent-gold);
-            color: #000;
+        /* Subtle Glow Lines on Button Hover */
+        .nav-btn::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: 0.5s;
+        }
+        .nav-btn:hover::after {
+            left: 100%;
+        }
+
+        @media (max-width: 480px) {
+            .main-title { font-size: 1.8rem; }
+            .portal-container { padding: 1.5rem 1rem; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Header -->
-    <header class="hero-header">
-        <h1 class="hero-title">🏛️ المكتبة الأكاديمية - السنة الثالثة</h1>
-        <p class="hero-subtitle">قسم الكيمياء الحيوية | جميع المحاضرات والسكاشن والمراجع</p>
-        
-        <div class="search-box">
-            <input type="text" id="searchInput" class="search-input" placeholder="🔍 ابحث عن أي مادة أو ملف..." onkeyup="filterFiles()">
-        </div>
-    </header>
+<div class="portal-container">
+    <!-- Header Section -->
+    <h1 class="main-title">🧬 Third Year 📂</h1>
+    <p class="subtitle">Al-Azhar University - Cairo</p>
 
-    <!-- مادة تجريبية 1 -->
-    <div class="subject-card">
-        <div class="subject-title">🧪 اسم المادة الأولى (مثال: كيمياء حيوية طبية)</div>
-        
-        <div class="section-tag">📚 المحاضرات النظري</div>
-        <div class="file-grid">
-            <div class="file-item">
-                <span class="file-name">📄 المحاضرة الأولى</span>
-                <div class="btn-group">
-                    <a href="y3-bio-lec1.pdf" class="btn btn-view" target="_blank">عرض</a>
-                    <a href="y3-bio-lec1.pdf" class="btn btn-down" download>تحميل</a>
-                </div>
-            </div>
-        </div>
+    <!-- First Semester Section -->
+    <div class="semester-title">First Semester</div>
+    
+    <div class="buttons-list">
+        <!-- زر التنبيهات أو الامتحانات -->
+        <a href="#" class="nav-btn alert-btn">📜 EXAMS & REVISIONS 📜</a>
 
-        <div class="section-tag">🔬 السكاشن والعملي</div>
-        <div class="file-grid">
-            <div class="file-item">
-                <span class="file-name">📄 سكشن 1 - التجارب</span>
-                <div class="btn-group">
-                    <a href="y3-bio-prac1.pdf" class="btn btn-view" target="_blank">عرض</a>
-                    <a href="y3-bio-prac1.pdf" class="btn btn-down" download>تحميل</a>
-                </div>
-            </div>
-        </div>
+        <!-- أزرار المواد - يمكنك تعديل أسماء وروابط المواد بسهولة -->
+        <a href="subject1.html" class="nav-btn">Advanced Biochemistry</a>
+        <a href="subject2.html" class="nav-btn">Molecular Biology</a>
+        <a href="subject3.html" class="nav-btn">Clinical Chemistry</a>
+        <a href="subject4.html" class="nav-btn">Enzymology</a>
+        <a href="subject5.html" class="nav-btn">Genetics</a>
+        <a href="subject6.html" class="nav-btn">Pharmacology</a>
     </div>
 
-</div>
+    <!-- Second Semester Section -->
+    <div class="semester-title">Second Semester</div>
 
-<script>
-    function filterFiles() {
-        let input = document.getElementById('searchInput').value.toLowerCase();
-        let cards = document.querySelectorAll('.subject-card');
-        
-        cards.forEach(card => {
-            let text = card.innerText.toLowerCase();
-            card.style.display = text.includes(input) ? "block" : "none";
-        });
-    }
-</script>
+    <div class="buttons-list">
+        <a href="#" class="nav-btn">Biotechnology</a>
+        <a href="#" class="nav-btn">Immunology</a>
+        <a href="#" class="nav-btn">Bioenergetics</a>
+    </div>
+</div>
 
 </body>
 </html>
