@@ -4,135 +4,259 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>السنة الثالثة - الكيمياء الحيوية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #0f172a;
-            --card-bg: #1e293b;
+            --card-bg: rgba(30, 41, 59, 0.7);
             --accent-gold: #f59e0b;
             --accent-blue: #38bdf8;
+            --accent-purple: #818cf8;
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
-            --border-color: #334155;
+            --border-glow: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
         }
 
         body {
-            font-family: 'Tajawal', sans-serif;
             background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.08) 0px, transparent 50%);
             color: var(--text-main);
-            margin: 0;
-            padding: 20px;
+            min-height: 100vh;
+            padding: 2rem 1rem;
         }
 
-        .header {
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header UI */
+        .hero-header {
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border-radius: 16px;
-            border: 1px solid var(--accent-gold);
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            padding: 2.5rem 1rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .header h1 {
-            color: var(--accent-gold);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-gold), var(--accent-purple));
+        }
+
+        .hero-title {
+            font-size: 2.4rem;
             font-weight: 900;
+            background: linear-gradient(135deg, #fff 30%, var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
         }
 
+        .hero-subtitle {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        /* Search Bar */
         .search-box {
-            width: 100%;
+            margin: 1.5rem auto 0;
             max-width: 500px;
-            margin: 20px auto 0;
-            display: block;
-            padding: 12px 20px;
-            border-radius: 25px;
-            border: 1px solid var(--border-color);
-            background: #0f172a;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid var(--border-glow);
+            background: rgba(15, 23, 42, 0.6);
             color: #fff;
-            font-family: 'Tajawal';
             font-size: 1rem;
-            text-align: center;
+            outline: none;
+            transition: 0.3s;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .search-input:focus {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
         }
 
+        /* Subject Cards Grid */
         .subject-card {
             background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
-            transition: all 0.3s ease;
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .subject-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-blue);
-            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .subject-title {
-            font-size: 1.3rem;
-            color: var(--accent-blue);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-glow);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-tag {
+            font-size: 0.95rem;
+            color: var(--accent-purple);
+            margin: 1rem 0 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Files List */
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
         }
 
         .file-item {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 0.8rem 1rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            background: #0f172a;
-            padding: 10px 14px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            border: 1px solid transparent;
+            justify-content: space-between;
+            transition: 0.2s;
         }
 
         .file-item:hover {
-            border-color: var(--border-color);
+            background: rgba(56, 189, 248, 0.08);
+            border-color: rgba(56, 189, 248, 0.3);
         }
 
         .file-name {
-            font-size: 0.95rem;
-            color: var(--text-main);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 60%;
         }
 
-        .btn-group a {
+        .btn-group {
+            display: flex;
+            gap: 6px;
+        }
+
+        .btn {
+            padding: 0.3rem 0.7rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 8px;
             text-decoration: none;
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-right: 4px;
-            display: inline-block;
+            transition: 0.2s;
         }
 
-        .view-btn { background: #0284c7; color: white; }
-        .down-btn { background: #059669; color: white; }
-        .view-btn:hover { background: #0369a1; }
-        .down-btn:hover { background: #047857; }
+        .btn-view {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-blue);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-view:hover {
+            background: var(--accent-blue);
+            color: #000;
+        }
+
+        .btn-down {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-gold);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-down:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>👑 المكتبة الأسطورية - السنة الثالثة</h1>
-        <p style="color: var(--text-sub);">جميع المحاضرات، السكاشن، والتبييضات الخاصة بالقسم</p>
+<div class="container">
+    <!-- Header -->
+    <header class="hero-header">
+        <h1 class="hero-title">🏛️ المكتبة الأكاديمية - السنة الثالثة</h1>
+        <p class="hero-subtitle">قسم الكيمياء الحيوية | جميع المحاضرات والسكاشن والمراجع</p>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 ابحث عن أي مادة أو ملف..." onkeyup="filterFiles()">
+        </div>
+    </header>
+
+    <!-- مادة تجريبية 1 -->
+    <div class="subject-card">
+        <div class="subject-title">🧪 اسم المادة الأولى (مثال: كيمياء حيوية طبية)</div>
+        
+        <div class="section-tag">📚 المحاضرات النظري</div>
+        <div class="file-grid">
+            <div class="file-item">
+                <span class="file-name">📄 المحاضرة الأولى</span>
+                <div class="btn-group">
+                    <a href="y3-bio-lec1.pdf" class="btn btn-view" target="_blank">عرض</a>
+                    <a href="y3-bio-lec1.pdf" class="btn btn-down" download>تحميل</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-tag">🔬 السكاشن والعملي</div>
+        <div class="file-grid">
+            <div class="file-item">
+                <span class="file-name">📄 سكشن 1 - التجارب</span>
+                <div class="btn-group">
+                    <a href="y3-bio-prac1.pdf" class="btn btn-view" target="_blank">عرض</a>
+                    <a href="y3-bio-prac1.pdf" class="btn btn-down" download>تحميل</a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="grid-container">
-        <!-- هنا سيتم إضافة كروت المواد بعد تفنيط الداتا -->
-    </div>
+</div>
+
+<script>
+    function filterFiles() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.querySelectorAll('.subject-card');
+        
+        cards.forEach(card => {
+            let text = card.innerText.toLowerCase();
+            card.style.display = text.includes(input) ? "block" : "none";
+        });
+    }
+</script>
 
 </body>
 </html>
