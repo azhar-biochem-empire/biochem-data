@@ -27,7 +27,6 @@
 
         body {
             background-color: var(--bg-dark);
-            /* خلفية علمية فخمة بتأثير زجاجي */
             background-image: 
                 radial-gradient(circle at 50% 30%, rgba(20, 45, 85, 0.7) 0%, rgba(11, 19, 37, 0.95) 100%),
                 url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1920');
@@ -39,7 +38,37 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
+            position: relative;
+        }
+
+        /* زر الرجوع للرئيسية */
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.6rem 1.2rem;
+            background: rgba(15, 30, 50, 0.85);
+            border: 1px solid var(--btn-border);
+            border-radius: 50px;
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .home-btn:hover {
+            border-color: var(--btn-hover-border);
+            background: rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 15px var(--accent-glow);
+            transform: translateY(-2px);
         }
 
         .portal-container {
@@ -52,9 +81,9 @@
             background: rgba(11, 19, 37, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.05);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            margin-top: 1.5rem;
         }
 
-        /* Header Style */
         .main-title {
             font-size: 2.3rem;
             font-weight: 800;
@@ -73,7 +102,6 @@
             letter-spacing: 1px;
         }
 
-        /* Semester Divider */
         .semester-title {
             font-size: 1.4rem;
             font-weight: 700;
@@ -96,7 +124,6 @@
         .semester-title::before { right: 100%; }
         .semester-title::after { left: 100%; background: linear-gradient(270deg, transparent, var(--text-gold)); }
 
-        /* Buttons Grid System */
         .buttons-list {
             display: flex;
             flex-direction: column;
@@ -129,7 +156,6 @@
             color: #ffffff;
         }
 
-        /* Distinct Style for Exams/Alert Button */
         .nav-btn.alert-btn {
             background: var(--alert-bg);
             border-color: var(--alert-border);
@@ -143,20 +169,8 @@
             box-shadow: 0 8px 25px rgba(239, 68, 68, 0.5);
         }
 
-        /* Subtle Glow Lines on Button Hover */
-        .nav-btn::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: 0.5s;
-        }
-        .nav-btn:hover::after {
-            left: 100%;
-        }
-
         @media (max-width: 480px) {
+            .home-btn { top: 12px; left: 12px; padding: 0.4rem 0.9rem; font-size: 0.8rem; }
             .main-title { font-size: 1.8rem; }
             .portal-container { padding: 1.5rem 1rem; }
         }
@@ -164,19 +178,19 @@
 </head>
 <body>
 
+<!-- Home Button -->
+<a href="index.html" class="home-btn">
+    <span>🏠</span> Home
+</a>
+
 <div class="portal-container">
-    <!-- Header Section -->
     <h1 class="main-title">🧬 Third Year 📂</h1>
     <p class="subtitle">Al-Azhar University - Cairo</p>
 
-    <!-- First Semester Section -->
     <div class="semester-title">First Semester</div>
     
     <div class="buttons-list">
-        <!-- زر التنبيهات أو الامتحانات -->
         <a href="#" class="nav-btn alert-btn">📜 EXAMS & REVISIONS 📜</a>
-
-        <!-- أزرار المواد - يمكنك تعديل أسماء وروابط المواد بسهولة -->
         <a href="subject1.html" class="nav-btn">Advanced Biochemistry</a>
         <a href="subject2.html" class="nav-btn">Molecular Biology</a>
         <a href="subject3.html" class="nav-btn">Clinical Chemistry</a>
@@ -185,7 +199,6 @@
         <a href="subject6.html" class="nav-btn">Pharmacology</a>
     </div>
 
-    <!-- Second Semester Section -->
     <div class="semester-title">Second Semester</div>
 
     <div class="buttons-list">
