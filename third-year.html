@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Third Year - Al-Azhar University</title>
+    <title>Third Year - Biochemistry Department</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -16,6 +16,7 @@
             --alert-border: #ff4d4d;
             --text-gold: #fbbf24;
             --text-white: #f8fafc;
+            --sub-text: #94a3b8;
         }
 
         * {
@@ -42,7 +43,6 @@
             position: relative;
         }
 
-        /* زر الرجوع للرئيسية */
         .home-btn {
             position: absolute;
             top: 20px;
@@ -73,12 +73,12 @@
 
         .portal-container {
             width: 100%;
-            max-width: 650px;
+            max-width: 680px;
             text-align: center;
             backdrop-filter: blur(8px);
             padding: 2.5rem 1.5rem;
             border-radius: 20px;
-            background: rgba(11, 19, 37, 0.4);
+            background: rgba(11, 19, 37, 0.45);
             border: 1px solid rgba(255, 255, 255, 0.05);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
             margin-top: 1.5rem;
@@ -97,7 +97,7 @@
 
         .subtitle {
             font-size: 0.95rem;
-            color: #94a3b8;
+            color: var(--sub-text);
             margin-bottom: 2.5rem;
             letter-spacing: 1px;
         }
@@ -131,15 +131,16 @@
         }
 
         .nav-btn {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             width: 100%;
-            padding: 1rem 1.5rem;
+            padding: 0.9rem 1.2rem;
             background: var(--btn-bg);
             border: 1.5px solid var(--btn-border);
             border-radius: 12px;
             color: var(--text-white);
-            font-weight: 600;
-            font-size: 1.05rem;
             text-decoration: none;
             backdrop-filter: blur(10px);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -148,12 +149,27 @@
             overflow: hidden;
         }
 
+        .btn-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .btn-subtitle {
+            font-size: 0.78rem;
+            color: var(--sub-text);
+            margin-top: 3px;
+            font-weight: 400;
+        }
+
         .nav-btn:hover {
             border-color: var(--btn-hover-border);
             transform: translateY(-3px) scale(1.01);
             box-shadow: 0 8px 25px var(--accent-glow);
             background: rgba(20, 45, 75, 0.85);
-            color: #ffffff;
+        }
+
+        .nav-btn:hover .btn-subtitle {
+            color: #e2e8f0;
         }
 
         .nav-btn.alert-btn {
@@ -161,6 +177,7 @@
             border-color: var(--alert-border);
             color: #ffffff;
             font-weight: 700;
+            padding: 1rem 1.5rem;
         }
 
         .nav-btn.alert-btn:hover {
@@ -178,7 +195,6 @@
 </head>
 <body>
 
-<!-- Home Button -->
 <a href="index.html" class="home-btn">
     <span>🏠</span> Home
 </a>
@@ -190,21 +206,42 @@
     <div class="semester-title">First Semester</div>
     
     <div class="buttons-list">
-        <a href="#" class="nav-btn alert-btn">📜 EXAMS & REVISIONS 📜</a>
-        <a href="subject1.html" class="nav-btn">Advanced Biochemistry</a>
-        <a href="subject2.html" class="nav-btn">Molecular Biology</a>
-        <a href="subject3.html" class="nav-btn">Clinical Chemistry</a>
-        <a href="subject4.html" class="nav-btn">Enzymology</a>
-        <a href="subject5.html" class="nav-btn">Genetics</a>
-        <a href="subject6.html" class="nav-btn">Pharmacology</a>
+        <a href="exams.html" class="nav-btn alert-btn">
+            <span class="btn-title">📜 EXAMS & REVISIONS 📜</span>
+        </a>
+
+        <a href="protein-metabolism.html" class="nav-btn">
+            <span class="btn-title">Protein Metabolism & Minerals (ك ح 366+367)</span>
+            <span class="btn-subtitle">د. القاضي | د. عمرو | د. المغاوري | د. فارس</span>
+        </a>
+
+        <a href="analytical-biochem.html" class="nav-btn">
+            <span class="btn-title">Analytical Biochemistry (ك ح 361)</span>
+            <span class="btn-subtitle">أ.د. طلعت | د. القاضي | د. عمرو | د. المغاوري</span>
+        </a>
+
+        <a href="computer-science.html" class="nav-btn">
+            <span class="btn-title">Computer Science (ح س 300)</span>
+            <span class="btn-subtitle">د. محمود سعيد</span>
+        </a>
+
+        <a href="inorganic-chemistry.html" class="nav-btn">
+            <span class="btn-title">Inorganic Chemistry (ك ح 374)</span>
+            <span class="btn-subtitle">أ.د. عواد | أ.د. النواوي | أ.د. حماد | أ.د. أنور</span>
+        </a>
+
+        <a href="microbial-biotech.html" class="nav-btn">
+            <span class="btn-title">Microbial Biotechnology (م 329)</span>
+            <span class="btn-subtitle">أ.د. عبد الرحمن | د. عطية | د. مسعد | د. سعيد</span>
+        </a>
     </div>
 
     <div class="semester-title">Second Semester</div>
 
     <div class="buttons-list">
-        <a href="#" class="nav-btn">Biotechnology</a>
-        <a href="#" class="nav-btn">Immunology</a>
-        <a href="#" class="nav-btn">Bioenergetics</a>
+        <a href="#" class="nav-btn">
+            <span class="btn-title">Coming Soon...</span>
+        </a>
     </div>
 </div>
 
