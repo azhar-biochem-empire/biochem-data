@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protein Metabolism & Minerals (ك ح 366+367)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0b1325;
+            --btn-bg: rgba(15, 30, 50, 0.75);
+            --btn-border: rgba(56, 189, 248, 0.25);
+            --btn-hover-border: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.4);
+            --practical-bg: rgba(16, 185, 129, 0.2);
+            --practical-border: #10b981;
+            --practical-glow: rgba(16, 185, 129, 0.4);
+            --text-gold: #fbbf24;
+            --text-white: #f8fafc;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        body {
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 50% 30%, rgba(20, 45, 85, 0.7) 0%, rgba(11, 19, 37, 0.95) 100%), url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1920');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            color: var(--text-white); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 3rem 1rem; position: relative;
+        }
+        .back-btn {
+            position: absolute; top: 20px; left: 20px; display: flex; align-items: center; gap: 8px;
+            padding: 0.6rem 1.2rem; background: rgba(15, 30, 50, 0.85); border: 1px solid var(--btn-border);
+            border-radius: 50px; color: var(--text-white); text-decoration: none; font-size: 0.9rem; font-weight: 600;
+            backdrop-filter: blur(10px); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); z-index: 10;
+        }
+        .back-btn:hover { border-color: var(--btn-hover-border); background: rgba(56, 189, 248, 0.2); box-shadow: 0 0 15px var(--accent-glow); transform: translateY(-2px); }
+        .subject-container {
+            width: 100%; max-width: 650px; text-align: center; backdrop-filter: blur(8px); padding: 2.5rem 1.5rem;
+            border-radius: 20px; background: rgba(11, 19, 37, 0.45); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6); margin-top: 1.5rem;
+        }
+        .main-title { font-size: 1.8rem; font-weight: 800; color: #38bdf8; text-shadow: 0 0 20px rgba(56, 189, 248, 0.3); }
+        .code-badge { display: inline-block; background: rgba(56, 189, 248, 0.15); border: 1px solid var(--btn-border); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.85rem; color: #7dd3fc; margin-top: 5px; margin-bottom: 2rem; }
+        .section-header { font-size: 1.2rem; font-weight: 700; color: var(--text-gold); margin: 1.5rem 0 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .buttons-list { display: flex; flex-direction: column; gap: 14px; }
+        .nav-btn {
+            display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 1rem 1.5rem;
+            background: var(--btn-bg); border: 1.5px solid var(--btn-border); border-radius: 12px; color: var(--text-white); font-weight: 600; font-size: 1.05rem; text-decoration: none; backdrop-filter: blur(10px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-btn:hover { border-color: var(--btn-hover-border); transform: translateY(-3px) scale(1.01); box-shadow: 0 8px 25px var(--accent-glow); background: rgba(20, 45, 75, 0.85); }
+        .nav-btn.practical-btn { background: var(--practical-bg); border-color: var(--practical-border); color: #6ee7b7; }
+        .nav-btn.practical-btn:hover { background: rgba(16, 185, 129, 0.35); border-color: #34d399; box-shadow: 0 8px 25px var(--practical-glow); color: #ffffff; }
+        .btn-icon { font-size: 1.2rem; }
+        @media (max-width: 480px) { .back-btn { top: 12px; left: 12px; padding: 0.4rem 0.9rem; font-size: 0.8rem; } .main-title { font-size: 1.5rem; } .subject-container { padding: 1.5rem 1rem; } }
+    </style>
+</head>
+<body>
+<a href="third-year.html" class="back-btn">⬅️ Back</a>
+<div class="subject-container">
+    <h1 class="main-title">Protein Metabolism & Minerals</h1>
+    <span class="code-badge">ك ح 366 + ك ح 367</span>
+    <div class="section-header">📖 Theoretical Lectures</div>
+    <div class="buttons-list">
+        <a href="#" class="nav-btn"><span>Dr. Mohamed El-Qady</span><span class="btn-icon">📁</span></a>
+        <a href="#" class="nav-btn"><span>Dr. Amr Yehia</span><span class="btn-icon">📁</span></a>
+        <a href="#" class="nav-btn"><span>Dr. El-Maghawry Hegazy</span><span class="btn-icon">📁</span></a>
+        <a href="#" class="nav-btn"><span>Dr. Mohamed Fares</span><span class="btn-icon">📁</span></a>
+    </div>
+    <div class="section-header">🔬 Practical Lab</div>
+    <div class="buttons-list">
+        <a href="#" class="nav-btn practical-btn"><span>Protein Metabolism Practical Lab (ك ح 366+367)</span><span class="btn-icon">🧪</span></a>
+    </div>
+</div>
+</body>
+</html>
