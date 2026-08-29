@@ -8,14 +8,12 @@
     <style>
         :root {
             --bg-dark: #070c18;
-            --card-bg: rgba(13, 22, 41, 0.65);
-            --card-border: rgba(56, 189, 248, 0.18);
+            --card-bg: rgba(13, 22, 41, 0.75);
+            --card-border: rgba(56, 189, 248, 0.2);
             --accent-cyan: #38bdf8;
-            --accent-pink: #ff007f;
             --accent-emerald: #10b981;
             --text-gold: #fbbf24;
             --text-white: #f8fafc;
-            --text-muted: #94a3b8;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -24,7 +22,6 @@
             background-color: var(--bg-dark);
             background-image: 
                 radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 85% 80%, rgba(255, 0, 127, 0.1) 0%, transparent 40%),
                 url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1920');
             background-size: cover;
             background-position: center;
@@ -39,136 +36,108 @@
         }
 
         .back-btn {
-            position: absolute; top: 24px; left: 24px;
+            position: absolute; top: 20px; left: 20px;
             display: inline-flex; align-items: center; gap: 8px;
-            padding: 0.7rem 1.4rem;
-            background: rgba(15, 23, 42, 0.7);
+            padding: 0.6rem 1.2rem;
+            background: rgba(15, 23, 42, 0.8);
             border: 1px solid var(--card-border);
             border-radius: 50px; color: var(--text-white);
-            text-decoration: none; font-size: 0.9rem; font-weight: 600;
-            backdrop-filter: blur(16px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); z-index: 10;
+            text-decoration: none; font-size: 0.85rem; font-weight: 600;
+            backdrop-filter: blur(12px); transition: all 0.3s ease;
+            z-index: 10;
         }
         .back-btn:hover {
             border-color: var(--accent-cyan);
-            background: rgba(56, 189, 248, 0.15);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
-            transform: translateX(-4px);
+            background: rgba(56, 189, 248, 0.2);
+            transform: translateX(-3px);
         }
 
         .subject-container {
-            width: 100%; max-width: 680px;
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            padding: 2.5rem 2rem; border-radius: 24px;
+            width: 100%; max-width: 650px;
+            backdrop-filter: blur(16px);
+            padding: 2.2rem 1.8rem; border-radius: 20px;
             background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
         }
 
-        .header-box { text-align: center; margin-bottom: 2rem; }
-        .main-title {
-            font-size: 2.1rem; font-weight: 800;
-            background: linear-gradient(135deg, #ffffff 30%, var(--accent-cyan) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
-        }
+        .header-box { text-align: center; margin-bottom: 1.8rem; }
+        .main-title { font-size: 1.8rem; font-weight: 800; color: var(--accent-cyan); }
         .code-badge {
-            display: inline-block; background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.3rem 1rem;
-            border-radius: 50px; font-size: 0.85rem; font-weight: 600;
-            color: var(--accent-cyan); margin-top: 8px;
+            display: inline-block; background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.25rem 0.8rem;
+            border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+            color: #7dd3fc; margin-top: 6px;
         }
 
         .section-header {
-            font-size: 1.15rem; font-weight: 700; color: var(--text-gold);
-            margin: 2rem 0 1rem; display: flex; align-items: center; gap: 10px;
-            letter-spacing: 0.5px; text-transform: uppercase;
-        }
-        .section-header::after {
-            content: ''; flex: 1; height: 1px;
-            background: linear-gradient(90deg, rgba(251, 191, 36, 0.3), transparent);
+            font-size: 1.1rem; font-weight: 700; color: var(--text-gold);
+            margin: 1.5rem 0 1rem; display: flex; align-items: center; gap: 8px;
         }
 
         .accordion-item {
             border: 1px solid var(--card-border);
-            border-radius: 14px; margin-bottom: 12px;
-            overflow: hidden; background: rgba(15, 23, 42, 0.4);
+            border-radius: 12px; margin-bottom: 10px;
+            overflow: hidden; background: rgba(15, 23, 42, 0.5);
             transition: all 0.3s ease;
         }
-        .accordion-item:hover { border-color: rgba(56, 189, 248, 0.4); }
 
         .accordion-btn {
-            width: 100%; padding: 1.1rem 1.4rem;
+            width: 100%; padding: 1rem 1.2rem;
             background: transparent; border: none; outline: none;
-            color: var(--text-white); font-weight: 600; font-size: 1rem;
+            color: var(--text-white); font-weight: 600; font-size: 0.95rem;
             display: flex; justify-content: space-between; align-items: center;
             cursor: pointer; transition: background 0.3s ease;
         }
-        .accordion-btn:hover { background: rgba(56, 189, 248, 0.08); }
-        .doc-info { display: flex; align-items: center; gap: 12px; }
-        .arrow-icon { font-size: 0.8rem; color: var(--accent-cyan); transition: transform 0.4s ease; }
+        .accordion-btn:hover { background: rgba(56, 189, 248, 0.1); }
+        .doc-info { display: flex; align-items: center; gap: 10px; }
+        .arrow-icon { font-size: 0.75rem; color: var(--accent-cyan); transition: transform 0.3s ease; }
 
         .accordion-item.active .arrow-icon { transform: rotate(180deg); }
-        .accordion-item.active { border-color: var(--accent-cyan); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
+        .accordion-item.active { border-color: var(--accent-cyan); }
 
         .accordion-content {
-            max-height: 0; overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
-            background: rgba(7, 12, 24, 0.6);
-        }
-        .accordion-item.active .accordion-content {
-            max-height: 1000px;
-            transition: max-height 0.4s ease-in-out;
+            display: none;
+            padding: 1rem;
+            background: rgba(7, 12, 24, 0.5);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        .files-wrapper { padding: 1rem; display: flex; flex-direction: column; gap: 10px; }
+        .accordion-item.active .accordion-content { display: block; }
 
         .file-card {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 0.9rem 1.1rem; background: rgba(30, 41, 59, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 10px;
-            transition: background 0.2s ease;
+            padding: 0.8rem 1rem; background: rgba(30, 41, 59, 0.6);
+            border-radius: 8px; margin-bottom: 8px;
         }
-        .file-card:hover { background: rgba(30, 41, 59, 0.8); }
-        .file-title { font-size: 0.92rem; color: #e2e8f0; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+        .file-card:last-child { margin-bottom: 0; }
+        .file-name { font-size: 0.88rem; color: #e2e8f0; }
 
         .file-actions { display: flex; gap: 8px; }
         .action-btn {
-            padding: 0.45rem 1rem; border-radius: 8px;
-            text-decoration: none; font-size: 0.82rem; font-weight: 700;
-            display: inline-flex; align-items: center; gap: 4px;
-            transition: all 0.25s ease;
+            padding: 0.4rem 0.9rem; border-radius: 6px;
+            text-decoration: none; font-size: 0.8rem; font-weight: 700;
+            transition: all 0.2s ease;
         }
         .btn-view {
             border: 1px solid var(--accent-cyan); color: var(--accent-cyan);
             background: rgba(56, 189, 248, 0.05);
         }
-        .btn-view:hover {
-            background: var(--accent-cyan); color: #000;
-            box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
-        }
+        .btn-view:hover { background: var(--accent-cyan); color: #000; }
 
         .btn-download {
-            background: linear-gradient(135deg, #ff007f, #d90429);
-            color: #ffffff; border: none;
+            background: #ff007f; color: #ffffff; border: none;
         }
-        .btn-download:hover {
-            opacity: 0.9; transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
-        }
+        .btn-download:hover { opacity: 0.85; }
 
-        /* Practical Lab Styling */
         .practical-item { border-color: rgba(16, 185, 129, 0.3); }
         .practical-item .accordion-btn { color: #6ee7b7; }
-        .practical-item:hover { border-color: var(--accent-emerald); }
-        .practical-item.active { border-color: var(--accent-emerald); box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2); }
+        .practical-item.active { border-color: var(--accent-emerald); }
 
-        @media (max-width: 580px) {
-            .file-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+        @media (max-width: 480px) {
+            .file-card { flex-direction: column; align-items: flex-start; gap: 10px; }
             .file-actions { width: 100%; justify-content: flex-end; }
-            .subject-container { padding: 1.8rem 1.2rem; }
-            .main-title { font-size: 1.6rem; }
+            .subject-container { padding: 1.5rem 1rem; }
+            .back-btn { top: 12px; left: 12px; padding: 0.4rem 0.8rem; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -184,84 +153,65 @@
 
     <div class="section-header">📖 Theoretical Lectures</div>
     
-    <!-- دكتور 1 -->
     <div class="accordion-item">
         <button class="accordion-btn" onclick="toggleAccordion(this)">
             <div class="doc-info"><span>👨‍🏫</span><span>Dr. Mohamed El-Qady</span></div>
             <span class="arrow-icon">▼</span>
         </button>
         <div class="accordion-content">
-            <div class="files-wrapper">
-                <div class="file-card">
-                    <span class="file-name">📄 Lecture 1: Protein Structure & Amino Acids</span>
-                    <div class="file-actions">
-                        <a href="files/lecture1.pdf" target="_blank" class="action-btn btn-view">👁️ View</a>
-                        <a href="files/lecture1.pdf" download class="action-btn btn-download">⬇️ Download</a>
-                    </div>
-                </div>
-                <div class="file-card">
-                    <span class="file-name">📄 Lecture 2: Urea Cycle Metabolism</span>
-                    <div class="file-actions">
-                        <a href="files/lecture2.pdf" target="_blank" class="action-btn btn-view">👁️ View</a>
-                        <a href="files/lecture2.pdf" download class="action-btn btn-download">⬇️ Download</a>
-                    </div>
+            <div class="file-card">
+                <span class="file-name">📄 Lecture 1: Protein Metabolism</span>
+                <div class="file-actions">
+                    <a href="#" target="_blank" class="action-btn btn-view">View</a>
+                    <a href="#" download class="action-btn btn-download">Download</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- دكتور 2 -->
     <div class="accordion-item">
         <button class="accordion-btn" onclick="toggleAccordion(this)">
             <div class="doc-info"><span>👨‍🏫</span><span>Dr. Amr Yehia</span></div>
             <span class="arrow-icon">▼</span>
         </button>
         <div class="accordion-content">
-            <div class="files-wrapper">
-                <div class="file-card">
-                    <span class="file-name">📄 Minerals Metabolism Part 1</span>
-                    <div class="file-actions">
-                        <a href="files/minerals_p1.pdf" target="_blank" class="action-btn btn-view">👁️ View</a>
-                        <a href="files/minerals_p1.pdf" download class="action-btn btn-download">⬇️ Download</a>
-                    </div>
+            <div class="file-card">
+                <span class="file-name">📄 Minerals Metabolism</span>
+                <div class="file-actions">
+                    <a href="#" target="_blank" class="action-btn btn-view">View</a>
+                    <a href="#" download class="action-btn btn-download">Download</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- دكتور 3 -->
     <div class="accordion-item">
         <button class="accordion-btn" onclick="toggleAccordion(this)">
             <div class="doc-info"><span>👨‍🏫</span><span>Dr. El-Maghawry Hegazy</span></div>
             <span class="arrow-icon">▼</span>
         </button>
         <div class="accordion-content">
-            <div class="files-wrapper">
-                <div class="file-card">
-                    <span class="file-name">📄 Enzyme Kinetics & Protein Synthesis</span>
-                    <div class="file-actions">
-                        <a href="files/enzymes.pdf" target="_blank" class="action-btn btn-view">👁️ View</a>
-                        <a href="files/enzymes.pdf" download class="action-btn btn-download">⬇️ Download</a>
-                    </div>
+            <div class="file-card">
+                <span class="file-name">📄 Lecture Material</span>
+                <div class="file-actions">
+                    <a href="#" target="_blank" class="action-btn btn-view">View</a>
+                    <a href="#" download class="action-btn btn-download">Download</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- دكتور 4 -->
     <div class="accordion-item">
         <button class="accordion-btn" onclick="toggleAccordion(this)">
             <div class="doc-info"><span>👨‍🏫</span><span>Dr. Mohamed Fares</span></div>
             <span class="arrow-icon">▼</span>
         </button>
         <div class="accordion-content">
-            <div class="files-wrapper">
-                <div class="file-card">
-                    <span class="file-name">📄 Inborn Errors of Metabolism</span>
-                    <div class="file-actions">
-                        <a href="files/inborn_errors.pdf" target="_blank" class="action-btn btn-view">👁️ View</a>
-                        <a href="files/inborn_errors.pdf" download class="action-btn btn-download">⬇️ Download</a>
-                    </div>
+            <div class="file-card">
+                <span class="file-name">📄 Lecture Material</span>
+                <div class="file-actions">
+                    <a href="#" target="_blank" class="action-btn btn-view">View</a>
+                    <a href="#" download class="action-btn btn-download">Download</a>
                 </div>
             </div>
         </div>
@@ -269,20 +219,17 @@
 
     <div class="section-header">🔬 Practical Lab</div>
 
-    <!-- المعمل العملي -->
     <div class="accordion-item practical-item">
         <button class="accordion-btn" onclick="toggleAccordion(this)">
             <div class="doc-info"><span>🧪</span><span>Protein Metabolism Practical Lab</span></div>
             <span class="arrow-icon">▼</span>
         </button>
         <div class="accordion-content">
-            <div class="files-wrapper">
-                <div class="file-card">
-                    <span class="file-name">📄 Qualitative Tests for Proteins (Lab Guide)</span>
-                    <div class="file-actions">
-                        <a href="files/lab_guide.pdf" target="_blank" class="action-btn btn-view">👁️ View</a>
-                        <a href="files/lab_guide.pdf" download class="action-btn btn-download">⬇️ Download</a>
-                    </div>
+            <div class="file-card">
+                <span class="file-name">📄 Lab Guide</span>
+                <div class="file-actions">
+                    <a href="#" target="_blank" class="action-btn btn-view">View</a>
+                    <a href="#" download class="action-btn btn-download">Download</a>
                 </div>
             </div>
         </div>
@@ -292,55 +239,10 @@
 
 <script>
     function toggleAccordion(button) {
-        const currentItem = button.parentElement;
-        const allItems = document.querySelectorAll('.accordion-item');
-
-        // إغلاق باقي القوائم تلقائياً للحصول على مظهر سلس
-        allItems.forEach(item => {
-            if (item !== currentItem) {
-                item.classList.remove('active');
-            }
-        });
-
-        // فتح أو إغلاق العنصر الحالي
-        currentItem.classList.toggle('active');
+        const item = button.parentElement;
+        item.classList.toggle('active');
     }
 </script>
 
-</body>
-</html>            border-radius: 20px; background: rgba(11, 19, 37, 0.45); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6); margin-top: 1.5rem;
-        }
-        .main-title { font-size: 1.8rem; font-weight: 800; color: #38bdf8; text-shadow: 0 0 20px rgba(56, 189, 248, 0.3); }
-        .code-badge { display: inline-block; background: rgba(56, 189, 248, 0.15); border: 1px solid var(--btn-border); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.85rem; color: #7dd3fc; margin-top: 5px; margin-bottom: 2rem; }
-        .section-header { font-size: 1.2rem; font-weight: 700; color: var(--text-gold); margin: 1.5rem 0 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .buttons-list { display: flex; flex-direction: column; gap: 14px; }
-        .nav-btn {
-            display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 1rem 1.5rem;
-            background: var(--btn-bg); border: 1.5px solid var(--btn-border); border-radius: 12px; color: var(--text-white); font-weight: 600; font-size: 1.05rem; text-decoration: none; backdrop-filter: blur(10px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .nav-btn:hover { border-color: var(--btn-hover-border); transform: translateY(-3px) scale(1.01); box-shadow: 0 8px 25px var(--accent-glow); background: rgba(20, 45, 75, 0.85); }
-        .nav-btn.practical-btn { background: var(--practical-bg); border-color: var(--practical-border); color: #6ee7b7; }
-        .nav-btn.practical-btn:hover { background: rgba(16, 185, 129, 0.35); border-color: #34d399; box-shadow: 0 8px 25px var(--practical-glow); color: #ffffff; }
-        .btn-icon { font-size: 1.2rem; }
-        @media (max-width: 480px) { .back-btn { top: 12px; left: 12px; padding: 0.4rem 0.9rem; font-size: 0.8rem; } .main-title { font-size: 1.5rem; } .subject-container { padding: 1.5rem 1rem; } }
-    </style>
-</head>
-<body>
-<a href="third-year.html" class="back-btn">⬅️ Back</a>
-<div class="subject-container">
-    <h1 class="main-title">Protein Metabolism & Minerals</h1>
-    <span class="code-badge">ك ح 366 + ك ح 367</span>
-    <div class="section-header">📖 Theoretical Lectures</div>
-    <div class="buttons-list">
-        <a href="#" class="nav-btn"><span>Dr. Mohamed El-Qady</span><span class="btn-icon">📁</span></a>
-        <a href="#" class="nav-btn"><span>Dr. Amr Yehia</span><span class="btn-icon">📁</span></a>
-        <a href="#" class="nav-btn"><span>Dr. El-Maghawry Hegazy</span><span class="btn-icon">📁</span></a>
-        <a href="#" class="nav-btn"><span>Dr. Mohamed Fares</span><span class="btn-icon">📁</span></a>
-    </div>
-    <div class="section-header">🔬 Practical Lab</div>
-    <div class="buttons-list">
-        <a href="#" class="nav-btn practical-btn"><span>Protein Metabolism Practical Lab (ك ح 366+367)</span><span class="btn-icon">🧪</span></a>
-    </div>
-</div>
 </body>
 </html>
