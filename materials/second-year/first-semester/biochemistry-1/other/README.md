@@ -1,1 +1,1 @@
-Biochemistry-1 - Frist Semester
+Biochemistry-1 - First Semester
