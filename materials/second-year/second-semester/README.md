@@ -1,1 +1,1 @@
-Second Year - First Semester
+Second Year - Second Semester
